@@ -10,9 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     serialPort = new QSerialPort(this);
 
     connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readSerialData);
-    connect(ui->connect_disconnect, &QPushButton::clicked, this, &MainWindow::on_connect_disconnect_clicked);
+    connect(ui->connect_btn, &QPushButton::clicked, this, &MainWindow::on_connect_btn_clicked);
 
-    ui->connect_disconnect->setText("Connect");
+    ui->connect_btn->setText("Connect");
+    ui->comboBox_transmit_ldr->setCurrentIndex(70);
+    ui->comboBox_transmit_rdr->setCurrentIndex(70);
+
+    ui->label_debug->setStyleSheet("color: #FF0000;");
+    ui->label_checksum->setStyleSheet("color: red");
 
     lastReceiveTime = 0;
 }
@@ -22,28 +27,18 @@ MainWindow::~MainWindow()
     if (serialPort->isOpen()) {
         serialPort->close();
     }
+    receiveTimer.invalidate(); // Stop the timer
     delete serialPort;
     delete ui;
 }
 
 
-void MainWindow::on_connect_disconnect_clicked()
+void MainWindow::on_connect_btn_clicked()
 {
-    if (serialPort->isOpen())
-    {
-        // If connected, disconnect
-        serialPort->close();
-        ui->connect_disconnect->setText("Connect"); // Change button text
-        qDebug() << "Serial port disconnected.";
-        // Reset the timer when disconnected
-        receiveTimer.invalidate(); // Stop the timer
-        lastReceiveTime = 0;
-        ui->label_receive_hz_value->setText("0.00");
-    }
-    else
-    {
         // If disconnected, try to connect
-        serialPort->setPortName("/dev/ttyUSB0");
+    QString port_name = ui->textEdit->toPlainText().trimmed();
+        serialPort->setPortName(port_name);
+        // serialPort->setPortName("/dev/ttyACM0");
         serialPort->setBaudRate(QSerialPort::Baud115200);
         serialPort->setDataBits(QSerialPort::Data8);
         serialPort->setParity(QSerialPort::NoParity);
@@ -52,15 +47,19 @@ void MainWindow::on_connect_disconnect_clicked()
 
         if (serialPort->open(QIODevice::ReadWrite))
         {
-            ui->connect_disconnect->setText("Disconnect"); // Change button text
-            qDebug() << "Serial port connected to /dev/ttyUSB0.";
+            QString sentMessage = "Serial port connected to /dev/ttyACM0.";
+            ui->label_debug->setText(sentMessage);
+            qDebug() << sentMessage;
+
             // Start the timer when connected
             receiveTimer.start();
             lastReceiveTime = receiveTimer.elapsed(); // Initialize with current elapsed time
+            ui->connect_btn->hide();
         } else {
-            qDebug() << "Failed to open serial port: " << serialPort->errorString();
+            QString sentMessage = "Failed to open serial port: " + serialPort->errorString();
+            ui->label_debug->setText(sentMessage);
+            qDebug() << sentMessage;
         }
-    }
 }
 
 void MainWindow::readSerialData()
@@ -77,7 +76,7 @@ void MainWindow::readSerialData()
         // Remove the processed message (including the newline) from the buffer
         serialBuffer.remove(0, newlineIndex + 1);
 
-        qDebug() << "Received raw: " << completeMessage;
+        //qDebug() << "Received raw: " << completeMessage;
         updateReceivedDataLabels(completeMessage); // Update UI with the message
     }
 }
@@ -107,7 +106,7 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
     QStringList values = QString(data).split(' ');
 
     const int EXPECTED_VALUES = 21; // Total number of values in your sprintf format
-    QString greenStyle = "background-color: green; color: black;";
+    QString greenStyle = "background-color: #90EE90; color: black;";
 
     if (values.size() == EXPECTED_VALUES)
     {
@@ -199,10 +198,39 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
         ui->label_rec_chk_value->setText(values.at(20));            // checksum
         ui->label_rec_chk_value->setStyleSheet(greenStyle);
 
+        int16_t rar_rec = values.at(0).toInt();
+        int16_t lar_rec = values.at(1).toInt();
+        int32_t rec_rec = values.at(2).toInt();
+        int32_t lec_rec = values.at(3).toInt();
+
+        int16_t estop_rec = values.at(6).toInt();
+        int16_t gpio1_rec = values.at(7).toInt();
+        int16_t gpio2_rec = values.at(8).toInt();
+        int16_t gpio3_rec = values.at(9).toInt();
+        int16_t gpio4_rec = values.at(10).toInt();
+        int16_t gpio5_rec = values.at(11).toInt();
+        int16_t gpio6_rec = values.at(12).toInt();
+        int16_t gpio7_rec = values.at(13).toInt();
+        int16_t gpio8_rec = values.at(14).toInt();
+        int16_t bum_rec = values.at(15).toInt();
+
+        int32_t checksum_rec = values.at(20).toInt();
+
+        int32_t checksum_check = rar_rec+lar_rec+rec_rec+lec_rec+estop_rec+gpio1_rec+gpio2_rec+gpio3_rec+gpio4_rec+
+                gpio5_rec+gpio6_rec+gpio7_rec+gpio8_rec+bum_rec;
+        if ( checksum_rec != checksum_check )
+        {
+            QString myString = QString("Checksum mismatch: calculated checksum = %1").arg(checksum_check);
+            ui->label_checksum->setText(myString);
+            //qDebug() << myString;
+        }
+
         on_transmit();
 
     } else {
-        qDebug() << "Received data has unexpected number of values:" << values.size() << " instead of " << EXPECTED_VALUES;
+        QString sentMessage = "Received data has unexpected number of values:"; // + values.size() + " instead of " + EXPECTED_VALUES;
+        ui->label_debug->setText(sentMessage);
+        qDebug() << sentMessage;
     }
 }
 
@@ -210,28 +238,40 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
 void MainWindow::on_transmit()
 {
     if (!serialPort->isOpen()) {
-        qDebug() << "Serial Port Not Open, Please connect to the serial port first.";
+        QString sentMessage = "Serial Port Not Open, Please connect to the serial port first.";
+        ui->label_debug->setText(sentMessage);
+        qDebug() << sentMessage;
         return;
     }
 
     // Get values from your LineEdit boxes
-    QString rdr = ui->lineEdit_transimt_rdr->text();                // right_desired_rpm
-    QString ldr = ui->lineEdit__transimt_ldr->text();               // left_desired_rpm
+    //QString rdr = ui->comboBox_transmit_rdr->currentText();               // right_desired_rpm
+    //QString ldr = ui->comboBox_transmit_ldr->currentText();             // left_desired_rpm
 
-    // Get GPIO values (assuming lineEdit_transimt_gpio1 to gpio8)
+    // Get GPIO values (assuming lineEdit_transmit_gpio1 to gpio8)
     // You might want to validate these inputs (e.g., ensure they are 0 or 1)
-    QString estop = ui->lineEdit__transimt_estop->text();
-    QString gpio1 = ui->lineEdit_transimt_gpio1->text();
-    QString gpio2 = ui->lineEdit_transimt_gpio2->text();
-    QString gpio3 = ui->lineEdit_transimt_gpio3->text();
-    QString gpio4 = ui->lineEdit_transimt_gpio4->text();
-    QString gpio5 = ui->lineEdit_transimt_gpio5->text();
-    QString gpio6 = ui->lineEdit_transimt_gpio6->text();
-    QString gpio7 = ui->lineEdit_transimt_gpio7->text();
-    QString gpio8 = ui->lineEdit_transimt_gpio8->text();
+//    QString estop = ui->comboBox_transmit_estop->currentText();
+//    QString gpio1 = ui->comboBox_transmit_gpio1->currentText();
+//    QString gpio2 = ui->comboBox_transmit_gpio2->currentText();
+//    QString gpio3 = ui->comboBox_transmit_gpio3->currentText();//    QString gpio4 = ui->comboBox_transmit_gpio4->currentText();
+//    QString gpio5 = ui->comboBox_transmit_gpio5->currentText();
+//    QString gpio6 = ui->comboBox_transmit_gpio6->currentText();
+//    QString gpio7 = ui->comboBox_transmit_gpio7->currentText();
+//    QString gpio8 = ui->comboBox_transmit_gpio8->currentText();
+        int16_t rdr   = ui->comboBox_transmit_rdr->currentText().toInt();
+        int16_t ldr   = ui->comboBox_transmit_ldr->currentText().toInt();
+        int16_t estop = ui->comboBox_transmit_estop->currentText().toInt();
+        int16_t gpio1 = ui->comboBox_transmit_gpio1->currentText().toInt();
+        int16_t gpio2 = ui->comboBox_transmit_gpio2->currentText().toInt();
+        int16_t gpio3 = ui->comboBox_transmit_gpio3->currentText().toInt();
+        int16_t gpio4 = ui->comboBox_transmit_gpio4->currentText().toInt();
+        int16_t gpio5 = ui->comboBox_transmit_gpio5->currentText().toInt();
+        int16_t gpio6 = ui->comboBox_transmit_gpio6->currentText().toInt();
+        int16_t gpio7 = ui->comboBox_transmit_gpio7->currentText().toInt();
+        int16_t gpio8 = ui->comboBox_transmit_gpio8->currentText().toInt();
 
-    QString checksum = "123";
-    ui->label_tran_chk_value->setText(checksum);
+    int32_t checksum = rdr+ldr+estop+gpio1+gpio2+gpio3+gpio4+gpio5+gpio6+gpio7+gpio8;
+    ui->label_tran_chk_value->setText(QString::number(checksum));
     // Construct the string to send.
     // IMPORTANT: This format MUST match what your embedded device expects to receive.
     // Example: "RDR:100 LDR:100 G:10101010\n" or "100 100 1 0 1 0 1 0 1 0\n"
@@ -257,9 +297,14 @@ void MainWindow::on_transmit()
     qint64 bytesWritten = serialPort->write(byteArrayData);
 
     if (bytesWritten == -1) {
-        qDebug() << "Failed to write to serial port: " << serialPort->errorString();
+        QString sentMessage = "Failed to write to serial port: " + serialPort->errorString();
+        ui->label_debug->setText(sentMessage);
+        qDebug() << sentMessage;
     } else {
-        qDebug() << "Sent:" << dataToSend.trimmed();
-        qDebug() << "Bytes written:" << bytesWritten;
+        QString sentMessage = "Sent: " + dataToSend.trimmed();
+        ui->label_debug->setText(sentMessage);
+        //qDebug() << sentMessage;
+        //qDebug() << "Bytes written:" << bytesWritten;
     }
 }
+
