@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Mobile Robot Protocol Tester v1.0</string>
+   <string>Mobile Robot Protocol Serial Tester v1.0</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_rec_rar">
@@ -162,7 +162,7 @@
      <rect>
       <x>30</x>
       <y>70</y>
-      <width>291</width>
+      <width>341</width>
       <height>34</height>
      </rect>
     </property>
@@ -174,7 +174,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Receive Data ==&gt;</string>
+     <string>PC Receive Data ==&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_rec_yaw_vel">
@@ -271,27 +271,27 @@
    <widget class="QLabel" name="label_rec_gpio5">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>413</x>
       <y>242</y>
       <width>81</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
-     <string>gpio5</string>
+     <string>ir5</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_rec_gpio6">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>250</x>
       <y>242</y>
-      <width>81</width>
+      <width>131</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
-     <string>gpio6</string>
+     <string>pwr_off6</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_rec_gpio7">
@@ -323,9 +323,9 @@
    <widget class="QLabel" name="label_transmit_data">
     <property name="geometry">
      <rect>
-      <x>1180</x>
+      <x>1120</x>
       <y>630</y>
-      <width>331</width>
+      <width>391</width>
       <height>34</height>
      </rect>
     </property>
@@ -337,7 +337,7 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;== Transmit Data</string>
+     <string>&lt;== PC Transmit Data</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_tran_ldr">
@@ -369,14 +369,14 @@
    <widget class="QLabel" name="label_tran_led6">
     <property name="geometry">
      <rect>
-      <x>1004</x>
+      <x>980</x>
       <y>810</y>
-      <width>81</width>
+      <width>131</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
-     <string>gpio6</string>
+     <string>pwr_off6</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_tran_led8">
@@ -408,7 +408,7 @@
    <widget class="QLabel" name="label_tran_led4">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>732</x>
       <y>810</y>
       <width>81</width>
       <height>34</height>
@@ -460,14 +460,14 @@
    <widget class="QLabel" name="label_tran_led5">
     <property name="geometry">
      <rect>
-      <x>865</x>
+      <x>877</x>
       <y>810</y>
       <width>81</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
-     <string>gpio5</string>
+     <string>ir5</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_tran_chk">
@@ -486,7 +486,7 @@
    <widget class="QLabel" name="label_receive_hz">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>400</x>
       <y>67</y>
       <width>61</width>
       <height>40</height>
@@ -506,7 +506,7 @@
    <widget class="QLabel" name="label_receive_hz_value">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>490</x>
       <y>68</y>
       <width>191</width>
       <height>40</height>
