@@ -105,8 +105,10 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
 
     QStringList values = QString(data).split(' ');
 
-    const int EXPECTED_VALUES = 21; // Total number of values in your sprintf format
+    const int EXPECTED_VALUES = 25; // Total number of values in your sprintf format
     QString greenStyle = "background-color: #90EE90; color: black;";
+    QString solidBlue = "color: blue;";
+    QString solidRed = "color: red;";
 
     if (values.size() == EXPECTED_VALUES)
     {
@@ -117,23 +119,27 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
         // 1: left_actual_rpm (hd)
         // 2: right_encoder_count (ld)
         // 3: left_encoder_count (ld)
-        // 4: volt (f)
-        // 5: ampere (f)
-        // 6: estop (hd)
-        // 7: led1 (hd)
-        // 8: led2 (hd)
-        // 9: led3 (hd)
-        // 10: led4 (hd)
-        // 11: led5 (hd)
-        // 12: led6 (hd)
-        // 13: led7 (hd)
-        // 14: led8 (hd)
-        // 15: bump1 (hd)
-        // 16: cliff (f)
-        // 17: ir (f)
-        // 18: imu_z_velocity (f)
-        // 19: imu_z_heading (f)
-        // 20: checksum (hd)
+        // 4: led1 (hd)
+        // 5: led2 (hd)
+        // 6: led3 (hd)
+        // 7: led4 (hd)
+        // 8: gpio1 (hd)
+        // 9: gpio2 (hd)
+        // 10: gpio3 (hd)
+        // 11: gpio4 (hd)
+        // 12: adc1 (hd)
+        // 13: adc2 (hd)
+        // 14: estop_status (hd)
+        // 15: emergency_shutdown (hd)
+        // 16: bump1 (hd)
+        // 17: temperature (f)
+        // 18: volt (f)
+        // 19: ampere (f)
+        // 20: cliff (f)
+        // 21: ir (f)
+        // 22: imu_z_velocity (f)
+        // 23: imu_z_heading (f)
+        // 24: checksum (hd)
 
         ui->label_rec_rar_value->setText(values.at(0));             // right_actual_rpm
         ui->label_rec_rar_value->setStyleSheet(greenStyle);
@@ -147,55 +153,67 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
         ui->label_rec_lec_value->setText(values.at(3));             // left_encoder_count
         ui->label_rec_lec_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_volt_value->setText(values.at(4));            // volt
-        ui->label_rec_volt_value->setStyleSheet(greenStyle);
+        ui->label_rec_led1_value->setText(values.at(4));           // led1
+        ui->label_rec_led1_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_ampere_value->setText(values.at(5));          // ampere
-        ui->label_rec_ampere_value->setStyleSheet(greenStyle);
+        ui->label_rec_led2_value->setText(values.at(5));           // led2
+        ui->label_rec_led2_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_estop_value->setText(values.at(6));           // estop
-        ui->label_rec_estop_value->setStyleSheet(greenStyle);
+        ui->label_rec_led3_value->setText(values.at(6));           // led3
+        ui->label_rec_led3_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio1_value->setText(values.at(7));           // led1
+        ui->label_rec_led4_value->setText(values.at(7));           // led4
+        ui->label_rec_led4_value->setStyleSheet(greenStyle);
+
+        ui->label_rec_gpio1_value->setText(values.at(8));          // gpio1
         ui->label_rec_gpio1_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio2_value->setText(values.at(8));           // led2
+        ui->label_rec_gpio2_value->setText(values.at(9));          // gpio2
         ui->label_rec_gpio2_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio3_value->setText(values.at(9));           // led3
+        ui->label_rec_gpio3_value->setText(values.at(10));          // gpio3
         ui->label_rec_gpio3_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio4_value->setText(values.at(10));          // led4
+        ui->label_rec_gpio4_value->setText(values.at(11));          // gpio4
         ui->label_rec_gpio4_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio5_value->setText(values.at(11));          // led5
-        ui->label_rec_gpio5_value->setStyleSheet(greenStyle);
+        ui->label_rec_adc1_value->setText(values.at(12));           // adc1
+        ui->label_rec_adc1_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio6_value->setText(values.at(12));          // led6
-        ui->label_rec_gpio6_value->setStyleSheet(greenStyle);
+        ui->label_rec_adc2_value->setText(values.at(13));           // adc2
+        ui->label_rec_adc2_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio7_value->setText(values.at(13));          // led7
-        ui->label_rec_gpio7_value->setStyleSheet(greenStyle);
+        ui->label_rec_estop_status_value->setText(values.at(14));   // estop
+        ui->label_rec_estop_status_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_gpio8_value->setText(values.at(14));          // led8
-        ui->label_rec_gpio8_value->setStyleSheet(greenStyle);
+        ui->label_rec_shutdown_value->setText(values.at(15));       // emergency shutdown
+        ui->label_rec_shutdown_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_bump_value->setText(values.at(15));           // bump
+        ui->label_rec_bump_value->setText(values.at(16));           // bump
         ui->label_rec_bump_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_cliff_value->setText(values.at(16));          // cliff
+        ui->label_rec_temperature_value->setText(values.at(17));    // temperature
+        ui->label_rec_temperature_value->setStyleSheet(greenStyle);
+
+        ui->label_rec_volt_value->setText(values.at(18));            // volt
+        ui->label_rec_volt_value->setStyleSheet(greenStyle);
+
+        ui->label_rec_ampere_value->setText(values.at(19));          // ampere
+        ui->label_rec_ampere_value->setStyleSheet(greenStyle);
+
+        ui->label_rec_cliff_value->setText(values.at(20));          // cliff
         ui->label_rec_cliff_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_ir_value->setText(values.at(17));             // ir
+        ui->label_rec_ir_value->setText(values.at(21));             // ir
         ui->label_rec_ir_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_yaw_vel_value->setText(values.at(18));        // imu_z_velocity
+        ui->label_rec_yaw_vel_value->setText(values.at(22));        // imu_z_velocity
         ui->label_rec_yaw_vel_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_yaw_heading_value->setText(values.at(19));    // imu_z_heading
+        ui->label_rec_yaw_heading_value->setText(values.at(23));    // imu_z_heading
         ui->label_rec_yaw_heading_value->setStyleSheet(greenStyle);
 
-        ui->label_rec_chk_value->setText(values.at(20));            // checksum
+        ui->label_rec_chk_value->setText(values.at(24));            // checksum
         ui->label_rec_chk_value->setStyleSheet(greenStyle);
 
         int16_t rar_rec = values.at(0).toInt();
@@ -203,27 +221,54 @@ void MainWindow::updateReceivedDataLabels(const QByteArray &data)
         int32_t rec_rec = values.at(2).toInt();
         int32_t lec_rec = values.at(3).toInt();
 
-        int16_t estop_rec = values.at(6).toInt();
-        int16_t gpio1_rec = values.at(7).toInt();
-        int16_t gpio2_rec = values.at(8).toInt();
-        int16_t gpio3_rec = values.at(9).toInt();
-        int16_t gpio4_rec = values.at(10).toInt();
-        int16_t gpio5_rec = values.at(11).toInt();
-        int16_t gpio6_rec = values.at(12).toInt();
-        int16_t gpio7_rec = values.at(13).toInt();
-        int16_t gpio8_rec = values.at(14).toInt();
-        int16_t bum_rec = values.at(15).toInt();
+        int16_t led1_rec  = values.at(4).toInt();
+        int16_t led2_rec  = values.at(5).toInt();
+        int16_t led3_rec  = values.at(6).toInt();
+        int16_t led4_rec  = values.at(7).toInt();
+        int16_t gpio1_rec = values.at(8).toInt();
+        int16_t gpio2_rec = values.at(9).toInt();
+        int16_t gpio3_rec = values.at(10).toInt();
+        int16_t gpio4_rec = values.at(11).toInt();
+        int16_t adc1_rec  = values.at(12).toInt();
+        int16_t adc2_rec  = values.at(13).toInt();
+        int16_t e_status  = values.at(14).toInt();
+        int16_t emergency = values.at(15).toInt();
+        int16_t bump1_rec = values.at(16).toInt();
 
-        int32_t checksum_rec = values.at(20).toInt();
+        int32_t checksum_rec = values.at(24).toInt();
 
-        int32_t checksum_check = rar_rec+lar_rec+rec_rec+lec_rec+estop_rec+gpio1_rec+gpio2_rec+gpio3_rec+gpio4_rec+
-                gpio5_rec+gpio6_rec+gpio7_rec+gpio8_rec+bum_rec;
+        int32_t checksum_check = rar_rec+
+        lar_rec+
+        rec_rec+
+        lec_rec+
+        led1_rec+
+        led2_rec+
+        led3_rec+
+        led4_rec+
+        gpio1_rec+
+        gpio2_rec+
+        gpio3_rec+
+        gpio4_rec+
+        adc1_rec+
+        adc2_rec+
+        e_status+
+        emergency+
+        bump1_rec;
+
         if ( checksum_rec != checksum_check )
         {
             QString myString = QString("Checksum mismatch: calculated checksum = %1").arg(checksum_check);
+            ui->label_checksum->setStyleSheet(solidRed);
             ui->label_checksum->setText(myString);
             //qDebug() << myString;
         }
+        else
+        {
+            QString my_str = "Checksum OK!";
+            ui->label_checksum->setStyleSheet(solidBlue);
+            ui->label_checksum->setText(my_str);
+        }
+
 
         on_transmit();
 
@@ -248,48 +293,63 @@ void MainWindow::on_transmit()
     //QString rdr = ui->comboBox_transmit_rdr->currentText();               // right_desired_rpm
     //QString ldr = ui->comboBox_transmit_ldr->currentText();             // left_desired_rpm
 
-    // Get GPIO values (assuming lineEdit_transmit_gpio1 to gpio8)
+    // Get GPIO values (assuming lineEdit_transmit_led1 to gpio4)
     // You might want to validate these inputs (e.g., ensure they are 0 or 1)
 //    QString estop = ui->comboBox_transmit_estop->currentText();
+//    QString led1 = ui->comboBox_transmit_led1->currentText();
+//    QString led2 = ui->comboBox_transmit_led2->currentText();
+//    QString led3 = ui->comboBox_transmit_led3->currentText();//    QString led4 = ui->comboBox_transmit_led4->currentText();
 //    QString gpio1 = ui->comboBox_transmit_gpio1->currentText();
 //    QString gpio2 = ui->comboBox_transmit_gpio2->currentText();
-//    QString gpio3 = ui->comboBox_transmit_gpio3->currentText();//    QString gpio4 = ui->comboBox_transmit_gpio4->currentText();
-//    QString gpio5 = ui->comboBox_transmit_gpio5->currentText();
-//    QString gpio6 = ui->comboBox_transmit_gpio6->currentText();
-//    QString gpio7 = ui->comboBox_transmit_gpio7->currentText();
-//    QString gpio8 = ui->comboBox_transmit_gpio8->currentText();
+//    QString gpio3 = ui->comboBox_transmit_gpio3->currentText();
+//    QString gpio4 = ui->comboBox_transmit_gpio4->currentText();
         int16_t rdr   = ui->comboBox_transmit_rdr->currentText().toInt();
         int16_t ldr   = ui->comboBox_transmit_ldr->currentText().toInt();
-        int16_t estop = ui->comboBox_transmit_estop->currentText().toInt();
+
+        int16_t led1 = ui->comboBox_transmit_led1->currentText().toInt();
+        int16_t led2 = ui->comboBox_transmit_led2->currentText().toInt();
+        int16_t led3 = ui->comboBox_transmit_led3->currentText().toInt();
+        int16_t led4 = ui->comboBox_transmit_led4->currentText().toInt();
+
         int16_t gpio1 = ui->comboBox_transmit_gpio1->currentText().toInt();
         int16_t gpio2 = ui->comboBox_transmit_gpio2->currentText().toInt();
         int16_t gpio3 = ui->comboBox_transmit_gpio3->currentText().toInt();
         int16_t gpio4 = ui->comboBox_transmit_gpio4->currentText().toInt();
-        int16_t gpio5 = ui->comboBox_transmit_gpio5->currentText().toInt();
-        int16_t gpio6 = ui->comboBox_transmit_gpio6->currentText().toInt();
-        int16_t gpio7 = ui->comboBox_transmit_gpio7->currentText().toInt();
-        int16_t gpio8 = ui->comboBox_transmit_gpio8->currentText().toInt();
 
-    int32_t checksum = rdr+ldr+estop+gpio1+gpio2+gpio3+gpio4+gpio5+gpio6+gpio7+gpio8;
+        int16_t adc1 = ui->comboBox_transmit_adc1->currentText().toInt();
+        int16_t adc2 = ui->comboBox_transmit_adc2->currentText().toInt();
+
+
+        int16_t estop = ui->comboBox_transmit_estop->currentText().toInt();
+        int16_t emergency_shutdown = ui->comboBox_transmit_shutdown->currentText().toInt();
+
+    int32_t checksum = rdr+ldr+
+            led1+led2+led3+led4+
+            gpio1+gpio2+gpio3+gpio4+
+            adc1+adc2+
+            estop+emergency_shutdown;
     ui->label_tran_chk_value->setText(QString::number(checksum));
     // Construct the string to send.
     // IMPORTANT: This format MUST match what your embedded device expects to receive.
     // Example: "RDR:100 LDR:100 G:10101010\n" or "100 100 1 0 1 0 1 0 1 0\n"
     // Let's assume a space-separated format similar to your receive, but with specific fields
     // You will need to define your transmit protocol carefully.
-    // Example assuming: "RDR_VALUE LDR_VALUE GPIO1_VAL ... GPIO8_VAL\n"
-    QString dataToSend = QString("%1 %2 %3 %4 %5 %6 %7 %8 %9 %10 %11 %12\n")
+    // Example assuming: "RDR_VALUE LDR_VALUE led1_VAL ... gpio4_VAL\n"
+    QString dataToSend = QString("%1 %2 %3 %4 %5 %6 %7 %8 %9 %10 %11 %12 %13 %14 %15\n")
                             .arg(rdr)
                             .arg(ldr)
-                            .arg(estop)
+                            .arg(led1)
+                            .arg(led2)
+                            .arg(led3)
+                            .arg(led4)
                             .arg(gpio1)
                             .arg(gpio2)
                             .arg(gpio3)
                             .arg(gpio4)
-                            .arg(gpio5)
-                            .arg(gpio6)
-                            .arg(gpio7)
-                            .arg(gpio8)
+                            .arg(adc1)
+                            .arg(adc2)
+                            .arg(estop)
+                            .arg(emergency_shutdown)
                             .arg(checksum);
 
     // Convert QString to QByteArray and send
