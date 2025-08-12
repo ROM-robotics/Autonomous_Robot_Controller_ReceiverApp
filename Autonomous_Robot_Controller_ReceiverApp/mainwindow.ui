@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1562</width>
-    <height>1068</height>
+    <width>1205</width>
+    <height>1018</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QLabel" name="label_rec_rar">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>130</y>
-      <width>221</width>
+      <x>710</x>
+      <y>72</y>
+      <width>121</width>
       <height>34</height>
      </rect>
     </property>
@@ -30,9 +30,9 @@
    <widget class="QLabel" name="label_rec_lar">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>130</y>
-      <width>211</width>
+      <x>500</x>
+      <y>72</y>
+      <width>111</width>
       <height>34</height>
      </rect>
     </property>
@@ -43,9 +43,9 @@
    <widget class="QLabel" name="label_rec_rec">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>130</y>
-      <width>281</width>
+      <x>260</x>
+      <y>72</y>
+      <width>141</width>
       <height>34</height>
      </rect>
     </property>
@@ -56,9 +56,9 @@
    <widget class="QLabel" name="label_rec_volt">
     <property name="geometry">
      <rect>
-      <x>203</x>
-      <y>358</y>
-      <width>91</width>
+      <x>170</x>
+      <y>308</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -70,8 +70,8 @@
     <property name="geometry">
      <rect>
       <x>32</x>
-      <y>358</y>
-      <width>129</width>
+      <y>308</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -82,9 +82,9 @@
    <widget class="QLabel" name="label_rec_estop_status">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>356</y>
-      <width>81</width>
+      <x>710</x>
+      <y>306</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -95,9 +95,9 @@
    <widget class="QLabel" name="label_rec_bump">
     <property name="geometry">
      <rect>
-      <x>543</x>
-      <y>357</y>
-      <width>81</width>
+      <x>420</x>
+      <y>307</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -108,9 +108,9 @@
    <widget class="QLabel" name="label_rec_cliff">
     <property name="geometry">
      <rect>
-      <x>754</x>
-      <y>488</y>
-      <width>129</width>
+      <x>750</x>
+      <y>438</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -121,8 +121,8 @@
    <widget class="QLabel" name="label_rec_ir">
     <property name="geometry">
      <rect>
-      <x>641</x>
-      <y>488</y>
+      <x>630</x>
+      <y>438</y>
       <width>61</width>
       <height>34</height>
      </rect>
@@ -134,9 +134,9 @@
    <widget class="QLabel" name="label_tran_rdr">
     <property name="geometry">
      <rect>
-      <x>373</x>
-      <y>729</y>
-      <width>231</width>
+      <x>290</x>
+      <y>659</y>
+      <width>131</width>
       <height>34</height>
      </rect>
     </property>
@@ -148,7 +148,7 @@
     <property name="geometry">
      <rect>
       <x>32</x>
-      <y>488</y>
+      <y>438</y>
       <width>129</width>
       <height>30</height>
      </rect>
@@ -161,8 +161,8 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>70</y>
-      <width>791</width>
+      <y>12</y>
+      <width>371</width>
       <height>34</height>
      </rect>
     </property>
@@ -181,8 +181,8 @@
     <property name="geometry">
      <rect>
       <x>416</x>
-      <y>486</y>
-      <width>171</width>
+      <y>436</y>
+      <width>101</width>
       <height>34</height>
      </rect>
     </property>
@@ -194,7 +194,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>486</y>
+      <y>436</y>
       <width>191</width>
       <height>34</height>
      </rect>
@@ -207,8 +207,8 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>129</y>
-      <width>281</width>
+      <y>71</y>
+      <width>141</width>
       <height>34</height>
      </rect>
     </property>
@@ -219,9 +219,9 @@
    <widget class="QLabel" name="label_rec_led1">
     <property name="geometry">
      <rect>
-      <x>1110</x>
-      <y>241</y>
-      <width>81</width>
+      <x>780</x>
+      <y>183</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -232,9 +232,9 @@
    <widget class="QLabel" name="label_rec_led2">
     <property name="geometry">
      <rect>
-      <x>988</x>
-      <y>242</y>
-      <width>81</width>
+      <x>708</x>
+      <y>184</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -245,9 +245,9 @@
    <widget class="QLabel" name="label_rec_led3">
     <property name="geometry">
      <rect>
-      <x>865</x>
-      <y>242</y>
-      <width>81</width>
+      <x>625</x>
+      <y>184</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -258,9 +258,9 @@
    <widget class="QLabel" name="label_rec_led4">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>242</y>
-      <width>81</width>
+      <x>540</x>
+      <y>184</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -271,9 +271,9 @@
    <widget class="QLabel" name="label_rec_gpio1">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>242</y>
-      <width>81</width>
+      <x>450</x>
+      <y>184</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -284,9 +284,9 @@
    <widget class="QLabel" name="label_rec_gpio2">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>242</y>
-      <width>81</width>
+      <x>360</x>
+      <y>184</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -297,9 +297,9 @@
    <widget class="QLabel" name="label_rec_gpio3">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>242</y>
-      <width>81</width>
+      <x>270</x>
+      <y>184</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -310,9 +310,9 @@
    <widget class="QLabel" name="label_rec_gpio4">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>242</y>
-      <width>81</width>
+      <x>190</x>
+      <y>184</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -323,9 +323,9 @@
    <widget class="QLabel" name="label_transmit_data">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>670</y>
-      <width>831</width>
+      <x>780</x>
+      <y>570</y>
+      <width>421</width>
       <height>34</height>
      </rect>
     </property>
@@ -343,9 +343,9 @@
    <widget class="QLabel" name="label_tran_ldr">
     <property name="geometry">
      <rect>
-      <x>639</x>
-      <y>731</y>
-      <width>231</width>
+      <x>470</x>
+      <y>659</y>
+      <width>111</width>
       <height>34</height>
      </rect>
     </property>
@@ -356,9 +356,9 @@
    <widget class="QLabel" name="label_tran_led1">
     <property name="geometry">
      <rect>
-      <x>931</x>
-      <y>731</y>
-      <width>81</width>
+      <x>660</x>
+      <y>659</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -369,9 +369,9 @@
    <widget class="QLabel" name="label_tran_gpio2">
     <property name="geometry">
      <rect>
-      <x>223</x>
-      <y>860</y>
-      <width>131</width>
+      <x>180</x>
+      <y>779</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -382,9 +382,9 @@
    <widget class="QLabel" name="label_tran_gpio4">
     <property name="geometry">
      <rect>
-      <x>498</x>
-      <y>860</y>
-      <width>81</width>
+      <x>440</x>
+      <y>779</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -395,9 +395,9 @@
    <widget class="QLabel" name="label_tran_estop">
     <property name="geometry">
      <rect>
-      <x>934</x>
-      <y>860</y>
-      <width>81</width>
+      <x>810</x>
+      <y>779</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -408,9 +408,9 @@
    <widget class="QLabel" name="label_tran_led4">
     <property name="geometry">
      <rect>
-      <x>1429</x>
-      <y>732</y>
-      <width>81</width>
+      <x>1130</x>
+      <y>659</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -421,9 +421,9 @@
    <widget class="QLabel" name="label_tran_gpio3">
     <property name="geometry">
      <rect>
-      <x>362</x>
-      <y>860</y>
-      <width>81</width>
+      <x>310</x>
+      <y>779</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -434,9 +434,9 @@
    <widget class="QLabel" name="label_tran_led2">
     <property name="geometry">
      <rect>
-      <x>1103</x>
-      <y>732</y>
-      <width>81</width>
+      <x>810</x>
+      <y>659</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -447,8 +447,8 @@
    <widget class="QLabel" name="label_tran_led3">
     <property name="geometry">
      <rect>
-      <x>1265</x>
-      <y>732</y>
+      <x>970</x>
+      <y>659</y>
       <width>81</width>
       <height>34</height>
      </rect>
@@ -460,9 +460,9 @@
    <widget class="QLabel" name="label_tran_gpio1">
     <property name="geometry">
      <rect>
-      <x>85</x>
-      <y>860</y>
-      <width>81</width>
+      <x>50</x>
+      <y>779</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -473,9 +473,9 @@
    <widget class="QLabel" name="label_tran_chk">
     <property name="geometry">
      <rect>
-      <x>1395</x>
-      <y>861</y>
-      <width>129</width>
+      <x>1110</x>
+      <y>780</y>
+      <width>91</width>
       <height>34</height>
      </rect>
     </property>
@@ -486,8 +486,8 @@
    <widget class="QLabel" name="label_receive_hz">
     <property name="geometry">
      <rect>
-      <x>1260</x>
-      <y>339</y>
+      <x>1000</x>
+      <y>239</y>
       <width>61</width>
       <height>40</height>
      </rect>
@@ -506,9 +506,9 @@
    <widget class="QLabel" name="label_receive_hz_value">
     <property name="geometry">
      <rect>
-      <x>1350</x>
-      <y>340</y>
-      <width>191</width>
+      <x>1050</x>
+      <y>240</y>
+      <width>31</width>
       <height>40</height>
      </rect>
     </property>
@@ -526,9 +526,9 @@
    <widget class="QPushButton" name="connect_btn">
     <property name="geometry">
      <rect>
-      <x>1270</x>
-      <y>30</y>
-      <width>261</width>
+      <x>1070</x>
+      <y>10</y>
+      <width>131</width>
       <height>48</height>
      </rect>
     </property>
@@ -539,9 +539,9 @@
    <widget class="QLabel" name="label_rec_rec_value">
     <property name="geometry">
      <rect>
-      <x>371</x>
-      <y>170</y>
-      <width>151</width>
+      <x>290</x>
+      <y>112</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -556,8 +556,8 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>169</y>
-      <width>151</width>
+      <y>111</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -571,8 +571,8 @@
    <widget class="QLabel" name="label_rec_rar_value">
     <property name="geometry">
      <rect>
-      <x>950</x>
-      <y>170</y>
+      <x>740</x>
+      <y>112</y>
       <width>51</width>
       <height>34</height>
      </rect>
@@ -587,8 +587,8 @@
    <widget class="QLabel" name="label_rec_lar_value">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>170</y>
+      <x>530</x>
+      <y>112</y>
       <width>51</width>
       <height>34</height>
      </rect>
@@ -604,8 +604,8 @@
     <property name="geometry">
      <rect>
       <x>35</x>
-      <y>400</y>
-      <width>91</width>
+      <y>350</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -619,9 +619,9 @@
    <widget class="QLabel" name="label_rec_volt_value">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>400</y>
-      <width>91</width>
+      <x>160</x>
+      <y>350</y>
+      <width>61</width>
       <height>34</height>
      </rect>
     </property>
@@ -635,8 +635,8 @@
    <widget class="QLabel" name="label_rec_gpio2_value">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>288</y>
+      <x>370</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -648,8 +648,8 @@
    <widget class="QLabel" name="label_rec_led1_value">
     <property name="geometry">
      <rect>
-      <x>1130</x>
-      <y>287</y>
+      <x>790</x>
+      <y>229</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -661,8 +661,8 @@
    <widget class="QLabel" name="label_rec_gpio4_value">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>288</y>
+      <x>200</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -674,8 +674,8 @@
    <widget class="QLabel" name="label_rec_estop_status_value">
     <property name="geometry">
      <rect>
-      <x>1046</x>
-      <y>400</y>
+      <x>720</x>
+      <y>350</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -687,8 +687,8 @@
    <widget class="QLabel" name="label_rec_led4_value">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>288</y>
+      <x>550</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -700,8 +700,8 @@
    <widget class="QLabel" name="label_rec_gpio3_value">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>288</y>
+      <x>280</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -713,8 +713,8 @@
    <widget class="QLabel" name="label_rec_led2_value">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>288</y>
+      <x>720</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -726,8 +726,8 @@
    <widget class="QLabel" name="label_rec_gpio1_value">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>288</y>
+      <x>460</x>
+      <y>230</y>
       <width>16</width>
       <height>34</height>
      </rect>
@@ -739,8 +739,8 @@
    <widget class="QLabel" name="label_rec_led3_value">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>288</y>
+      <x>640</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -753,7 +753,7 @@
     <property name="geometry">
      <rect>
       <x>750</x>
-      <y>530</y>
+      <y>480</y>
       <width>71</width>
       <height>34</height>
      </rect>
@@ -765,9 +765,9 @@
    <widget class="QLabel" name="label_rec_bump_value">
     <property name="geometry">
      <rect>
-      <x>548</x>
-      <y>400</y>
-      <width>71</width>
+      <x>425</x>
+      <y>350</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -779,7 +779,7 @@
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>530</y>
+      <y>480</y>
       <width>71</width>
       <height>34</height>
      </rect>
@@ -792,7 +792,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>532</y>
+      <y>482</y>
       <width>129</width>
       <height>30</height>
      </rect>
@@ -805,7 +805,7 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>530</y>
+      <y>480</y>
       <width>131</width>
       <height>34</height>
      </rect>
@@ -817,9 +817,9 @@
    <widget class="QLabel" name="label_rec_yaw_vel_value">
     <property name="geometry">
      <rect>
-      <x>436</x>
-      <y>530</y>
-      <width>131</width>
+      <x>430</x>
+      <y>480</y>
+      <width>91</width>
       <height>34</height>
      </rect>
     </property>
@@ -830,9 +830,9 @@
    <widget class="QLabel" name="label_tran_chk_value">
     <property name="geometry">
      <rect>
-      <x>1400</x>
-      <y>917</y>
-      <width>129</width>
+      <x>1120</x>
+      <y>836</y>
+      <width>81</width>
       <height>34</height>
      </rect>
     </property>
@@ -843,9 +843,9 @@
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>30</y>
-      <width>231</width>
+      <x>890</x>
+      <y>10</y>
+      <width>131</width>
       <height>51</height>
      </rect>
     </property>
@@ -860,8 +860,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_estop">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>910</y>
+      <x>800</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -883,8 +883,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_led1">
     <property name="geometry">
      <rect>
-      <x>918</x>
-      <y>782</y>
+      <x>640</x>
+      <y>709</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -906,8 +906,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_led2">
     <property name="geometry">
      <rect>
-      <x>1090</x>
-      <y>782</y>
+      <x>790</x>
+      <y>709</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -929,8 +929,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_led3">
     <property name="geometry">
      <rect>
-      <x>1257</x>
-      <y>782</y>
+      <x>950</x>
+      <y>709</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -952,8 +952,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_led4">
     <property name="geometry">
      <rect>
-      <x>1418</x>
-      <y>782</y>
+      <x>1109</x>
+      <y>709</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -975,8 +975,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_gpio1">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>910</y>
+      <x>35</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -998,8 +998,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_gpio2">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>910</y>
+      <x>160</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -1021,8 +1021,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_gpio3">
     <property name="geometry">
      <rect>
-      <x>358</x>
-      <y>910</y>
+      <x>290</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -1044,8 +1044,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_gpio4">
     <property name="geometry">
      <rect>
-      <x>498</x>
-      <y>910</y>
+      <x>420</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -1067,8 +1067,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_rdr">
     <property name="geometry">
      <rect>
-      <x>429</x>
-      <y>780</y>
+      <x>299</x>
+      <y>709</y>
       <width>111</width>
       <height>51</height>
      </rect>
@@ -1785,8 +1785,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_ldr">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>782</y>
+      <x>470</x>
+      <y>709</y>
       <width>111</width>
       <height>51</height>
      </rect>
@@ -2503,9 +2503,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_debug">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>990</y>
-      <width>1311</width>
+      <x>130</x>
+      <y>910</y>
+      <width>821</width>
       <height>34</height>
      </rect>
     </property>
@@ -2516,9 +2516,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_checksum">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>590</y>
-      <width>1321</width>
+      <x>0</x>
+      <y>530</y>
+      <width>611</width>
       <height>34</height>
      </rect>
     </property>
@@ -2529,9 +2529,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_shutdown">
     <property name="geometry">
      <rect>
-      <x>668</x>
-      <y>357</y>
-      <width>301</width>
+      <x>512</x>
+      <y>307</y>
+      <width>171</width>
       <height>34</height>
      </rect>
     </property>
@@ -2542,9 +2542,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_shutdown_value">
     <property name="geometry">
      <rect>
-      <x>766</x>
-      <y>400</y>
-      <width>71</width>
+      <x>570</x>
+      <y>350</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -2555,9 +2555,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_temperature">
     <property name="geometry">
      <rect>
-      <x>321</x>
-      <y>358</y>
-      <width>171</width>
+      <x>270</x>
+      <y>308</y>
+      <width>101</width>
       <height>34</height>
      </rect>
     </property>
@@ -2568,9 +2568,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_temperature_value">
     <property name="geometry">
      <rect>
-      <x>366</x>
-      <y>400</y>
-      <width>71</width>
+      <x>290</x>
+      <y>350</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -2582,8 +2582,8 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>32</x>
-      <y>243</y>
-      <width>81</width>
+      <y>185</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -2594,8 +2594,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_adc2_value">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>288</y>
+      <x>40</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -2607,9 +2607,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_adc1">
     <property name="geometry">
      <rect>
-      <x>142</x>
-      <y>243</y>
-      <width>81</width>
+      <x>110</x>
+      <y>185</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -2620,8 +2620,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_rec_adc1_value">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>288</y>
+      <x>120</x>
+      <y>230</y>
       <width>21</width>
       <height>34</height>
      </rect>
@@ -2633,8 +2633,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_adc1">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>910</y>
+      <x>550</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -2656,9 +2656,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_tran_adc1">
     <property name="geometry">
      <rect>
-      <x>652</x>
-      <y>860</y>
-      <width>81</width>
+      <x>570</x>
+      <y>779</y>
+      <width>41</width>
       <height>34</height>
      </rect>
     </property>
@@ -2669,9 +2669,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_tran_adc2">
     <property name="geometry">
      <rect>
-      <x>798</x>
-      <y>860</y>
-      <width>81</width>
+      <x>700</x>
+      <y>779</y>
+      <width>51</width>
       <height>34</height>
      </rect>
     </property>
@@ -2682,8 +2682,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_adc2">
     <property name="geometry">
      <rect>
-      <x>787</x>
-      <y>910</y>
+      <x>680</x>
+      <y>829</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -2705,9 +2705,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_tran_shutdown">
     <property name="geometry">
      <rect>
-      <x>1069</x>
-      <y>861</y>
-      <width>301</width>
+      <x>900</x>
+      <y>780</y>
+      <width>161</width>
       <height>34</height>
      </rect>
     </property>
@@ -2718,8 +2718,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QComboBox" name="comboBox_transmit_shutdown">
     <property name="geometry">
      <rect>
-      <x>1166</x>
-      <y>911</y>
+      <x>930</x>
+      <y>830</y>
       <width>81</width>
       <height>51</height>
      </rect>
